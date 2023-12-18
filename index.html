@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Random Password Generator App </title>
+  <link rel="preconnect" href="http://fonts.googleapis.com">
+  <link rel="preconnect" href="http://fonts.gstatic.com">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&dis">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+  class="w-screen h-screen flex flex-col items-center justify-center bg-gradient-to-bl from-[rgba(22_6_40/1)] via-[rgba(52_28_79/1)] to-[rgba(88_7_125/1)] ">
+  <div class="w-11/12 max-w-md">
+    <h1 class=" text-[hsl(0_0%_100%)] uppercase tracking-[2px] text-center leading-tight text-4xl font-bold opacity-80">
+      PASSWORD GENERATOR </h1>
+    <div
+      class="display-container border-b-8 border-[hsl(281_89%_26%)] bg-[hsl(268_75%_9%)]  relative rounded-2xl m-1 pt-1.5 -translate-2/4">
+      <!--- The data-* attributes is used to store custom data private to the page or application. The data-* attributes gives us the ability to embed custom data attributes on all HTML elements.
+        The stored (custom) data can then be used in the page's JavaScript to create a more engaging user experience (without any Ajax calls or server-side database queries).
+        The attribute name should not contain any uppercase letters, and must be at least one character long after the prefix "data-" -->
+      <input readonly placeholder="Password"
+        class="display py-5 pl-5 bg-transparent font-semibold text-2xl tracking-[1px] border-none" data-passwordDisplay>
+      <button data-copy class="absolute t-1/2 right-6 ">
+        <span data-copyMsg class="text-white"> Copied </span>
+        <img src="/copy.svg" alt="copy icon" height="23" width="23">
+      </button>
+    </div>
+    <div class=" bg-[hsl(268_75%_9%)] w-full rounded-2xl border-b-8 border-[hsl(281_89%_26%)] p-8 mt-4">
+      <div class="length-container flex justify-between items-center ">
+        <p class="text-[hsl(0_0%_100%)] text-2xl "> Password Length </p>
+        <p data-lengthNumber class="text-[hsl(52_100%_62%)] text-2xl"> 0 </p>
+      </div>
+      <input type="range" min="1" max="20"
+        class="slider appearance-none w-full h-3 cursor-pointer bg-[hsl(268_47%_21%)] rounded-2xl mt-1 mb-6 bg-gradient-to-r from-[hsl(285_91%_52%)] to-[hsl(285_91%_52%)] bg-no-repeat"
+        step="1" data-lengthSlider>
+      <div class="flex flex-col gap-3 ">
+        <div class="space-x-3">
+          <input type="checkbox" id="uppercase"
+            class="appearance-none w-5 h-5 border-2 border-[hsl(176_100%_44%)] cursor-pointer relative rounded-md checked:bg-[hsl(176_100%_44%)] before:checked:absolute  before:checked:content-['✔'] before:checked:text-[hsl(198_20%_13%)] before:checked:font-semibold">
+          <label for="uppercase" class="text-[hsl(0_0%_100%)] text-xl tracking-widest">Include Uppercase Letters</label>
+        </div>
+        <div class="space-x-3">
+          <input type="checkbox" id="lowercase"
+            class="appearance-none w-5 h-5 border-2 border-[hsl(176_100%_44%)] cursor-pointer relative rounded-md checked:bg-[hsl(176_100%_44%)] before:checked:absolute  before:checked:content-['✔'] before:checked:text-[hsl(198_20%_13%)] before:checked:font-semibold">
+          <label for="lowercase" class="text-[hsl(0_0%_100%)] text-xl tracking-widest">Include Lowercase Letters</label>
+        </div>
+        <div class="space-x-3">
+          <input type="checkbox" id="numbers"
+            class="appearance-none w-5 h-5 border-2 border-[hsl(176_100%_44%)] cursor-pointer relative rounded-md checked:bg-[hsl(176_100%_44%)] before:checked:absolute  before:checked:content-['✔'] before:checked:text-[hsl(198_20%_13%)] before:checked:font-semibold">
+          <label for="numbers" class="text-[hsl(0_0%_100%)] text-xl tracking-widest">Include Numbers</label>
+        </div>
+        <div class="space-x-3">
+          <input type="checkbox" id="symbols"
+            class="appearance-none w-5 h-5 border-2 border-[hsl(176_100%_44%)] cursor-pointer relative rounded-md checked:bg-[hsl(176_100%_44%)] before:checked:absolute  before:checked:content-['✔'] before:checked:text-[hsl(198_20%_13%)] before:checked:font-semibold">
+          <label for="symbols" class="text-[hsl(0_0%_100%)] text-xl tracking-widest">Include Symbols</label>
+        </div>
+      </div>
+      <div class="strength-container flex justify-between items-center mt-7 mb-8">
+        <p class="text-[hsl(0_0%_100%)] text-2xl"> Strength </p>
+        <div data-indicator class="rounded-full w-6 h-6"></div>
+      </div>
+      <button
+        class="generateBtn w-full p-4 bg-[hsl(285_91%_52%)] text-center rounded-xl border-b-4 border-[hsl(52_100%_62%)] tracking-widest text-[hsl(52_100%_62%)] font-semibold text-xl before:shadow">
+        GENERATE PASSWORD </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
