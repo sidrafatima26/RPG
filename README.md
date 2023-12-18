@@ -32,7 +32,7 @@ git clone https://github.com/sidrafatima26/Share_Modal_App.git
 
 ## Usage
 
-Feel free to explore the code, suggest improvements, or use it as a reference for your own projects. If you encounter any issues or have suggestions, please [create an issue](https://github.com/sidrafatima26/Share_Modal_App/issues).
+Feel free to explore the code, suggest improvements, or use it as a reference for your own projects. If you encounter any issues or have suggestions, please [create an issue](https://github.com/sidrafatima26/RPG/issues).
 
 ## Technologies Used
 
